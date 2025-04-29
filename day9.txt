@@ -1,0 +1,67 @@
+::Q2)
+
+    *
+   ***
+  *****
+ *******
+*********
+ *******
+  *****
+   ***
+    *
+[2021ict103@fedora ~]$ touch star.sh
+[2021ict103@fedora ~]$ vi star.sh
+[2021ict103@fedora ~]$ chmod 777 star.sh
+[2021ict103@fedora ~]$ ./star.sh
+Enter the no of rows:
+5
+
+echo "Enter the no of rows: "
+read rows
+
+for((i=1; i<=rows;i++))
+do
+for((j=i;j<rows;j++))
+do
+echo -n " "
+done
+for((k=1; k<=((2*i-1)); k++))
+do
+echo -n "*"
+done
+echo
+done
+
+for((i=rows-1; i>=1; i--))
+do
+for((j=rows-1;j>=i;j--))
+do
+echo -n " "
+done
+for((k=1;k<=((2*i-1));k++))
+do
+echo -n "*"
+done
+echo
+done
+--------------------------------------------------------------------
+::rectangle pattern
+*****
+*   *
+*   *
+*   *
+*****
+for ((i=1; i<=5; i++))
+do
+    for ((j=1; j<=5; j++))
+    do
+        if [ $i -eq 1 ] || [ $i -eq 5 ] || [ $j -eq 1 ] || [ $j -eq 5 ]
+        then
+            echo -n "*"
+        else
+            echo -n " "
+        fi
+    done
+    echo     
+done
+
