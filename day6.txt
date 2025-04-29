@@ -1,0 +1,250 @@
+//Q1. get the calander and date
+cal          // Display the current month's calendar in a simple format (similar to what you'd see in a terminal like PuTTY)
+
+
+output:
+     April 2025
+Su Mo Tu We Th Fr Sa
+ 1  2  3  4  5  6
+ 7  8  9 10 11 12
+13 14 15 16 17 18 19
+20 21 22 23 24 25 26
+27 28 29 30
+
+
+date     // Display the current date and time in the system's default format
+
+Sun Apr 28 11:45:21 UTC 2025
+
+
+
+
+//Q2.Get the student name and marks for the 3 subjects from the user then calculate 
+output:-
+		Enter the name:
+		Enter the mark for subject1:
+		Enter the mark for subject2:
+		Enter the mark for subject3:
+		Total:
+		Average:
+
+
+echo "Enter name: "    // Prompt the user to enter a name
+read name             // Read the name input from the user
+
+echo "marks1: "        // Prompt the user to enter the first marks value
+read marks1           // Read the marks1 input from the user
+
+echo "marks2: "        // Prompt the user to enter the second marks value
+read marks2           // Read the marks2 input from the user
+
+echo "marks3: "        // Prompt the user to enter the third marks value
+read marks3           // Read the marks3 input from the user
+
+total=$(($marks1+$marks2+$marks3))    // Calculate the total of marks1, marks2, and marks3
+average=$(($total/3))                   // Calculate the average of the three marks
+
+echo "Total is: " $total    // Display the total marks
+echo "Average is: " $average // Display the average marks
+
+
+
+output:
+
+Enter name: 
+Kesha
+marks1: 
+93
+marks2: 
+88
+marks3: 
+78
+Total is:  259
+Average is:  86
+
+
+
+
+
+
+
+
+ Q3. Create calculator with arithmatic operators
+output:-
+		Enter the first number:
+		Enter the second number:
+		Summation:
+		Substarction:
+		Division:
+		Multiplication:
+		
+		
+answer:
+
+echo "num1: "      // Prompt the user to enter the first number (num1)
+read num1         // Read the num1 input from the user
+
+echo "num2"        // Prompt the user to enter the second number (num2)
+read num2         // Read the num2 input from the user
+
+sum=$(($num1+$num2))    // Calculate the sum of num1 and num2
+sub=$(($num1-$num2))    // Calculate the difference (num1 - num2)
+mult=$(($num1*$num2))   // Calculate the product of num1 and num2
+div=$(($num1/$num2))    // Calculate the division of num1 by num2
+
+echo "sum: "$sum       // Display the sum
+echo "sub: "$sub       // Display the subtraction result
+echo "mult: "$mult     // Display the multiplication result
+echo "div: "$div       // Display the division result
+
+
+
+
+output:
+
+num1: 
+12
+num2
+4
+sum: 16
+sub: 8
+mult: 48
+div: 3
+
+
+
+//Q4  get the number and output the day
+
+
+echo "Number: "    // Prompt the user to enter a number
+read number       // Read the input number from the user
+
+case $number in  // Start a case statement to handle different numbers
+1) echo "monday" ;;   // If the number is 1, display 'monday'
+2) echo "tuesday" ;;  // If the number is 2, display 'tuesday'
+3) echo "Wednesday" ;;// If the number is 3, display 'Wednesday'
+4) echo "thursday" ;; // If the number is 4, display 'thursday'
+5) echo "friday" ;;   // If the number is 5, display 'friday'
+6) echo "saturday" ;; // If the number is 6, display 'saturday'
+7) echo "sunday" ;;   // If the number is 7, display 'sunday'
+*) echo "invalid" ;;  // If the number is not between 1 and 7, display 'invalid'
+esac   // End of the case statement
+
+
+output:
+
+Number: 
+3
+Wednesday
+
+
+
+
+
+//Q5 //verify whether your name is correct or not 
+output Enter your name
+       username is not correct
+	   
+
+answer:
+
+name='ghi'           // Define a variable 'name' and assign the value 'Keshanya'
+echo "Enter username"      // Prompt the user to enter a username
+read username             // Read the username input from the user
+
+if [ $name = $username ]; then  // Check if the entered username matches the value of 'name'
+    echo "Username is correct" // If they match, display 'Username is correct'
+else
+    echo "username is incorrect" // If they don't match, display 'username is incorrect'
+fi                           // End the if-else statement
+
+
+
+output:
+
+Enter username
+ghi
+Username is correct
+
+
+Enter username
+Mala
+username is incorrect
+
+
+
+
+
+
+//Q6  find greater number in between two numbers 
+
+echo "Num1: "           // Prompt the user to enter the first number (num1)
+read num1              // Read the num1 input from the user
+
+echo "num2"             // Prompt the user to enter the second number (num2)
+read num2              // Read the num2 input from the user
+
+if [ $num1 -gt $num2 ]; then  // Check if num1 is greater than num2 using '-gt' (greater than)
+    echo "$num1 is greater than $num2" // If true, display that num1 is greater
+else
+    echo "$num2 is greater than $num1" // If false, display that num2 is greater
+fi                          // End the if-else statement
+
+
+output:
+
+Num1: 
+10
+num2
+5
+10 is greater than 5
+
+
+
+//Q7  create a simple calculator using "expr" command same as the question3
+
+\* → backslash is needed to escape * (multiplication) in expr.
+
+expr does integer math only.
+
+Can handle string operations
+Like checking length: expr length "hello"
+Or extracting substrings.
+
+
+
+
+
+answer:
+
+echo "Enter num1: "         // Prompt the user to enter the first number (num1)
+read num1                  // Read the num1 input from the user
+
+echo "Enter num2: "         // Prompt the user to enter the second number (num2)
+read num2                  // Read the num2 input from the user
+
+sum=$(expr $num1 + $num2)  // Calculate the sum of num1 and num2 using 'expr'
+sub=$(expr $num1 - $num2)  // Calculate the subtraction of num1 and num2 using 'expr'
+mul=$(expr $num1 \* $num2) // Calculate the multiplication of num1 and num2 using 'expr' (note the escape for *)
+div=$(expr $num1 / $num2)  // Calculate the division of num1 by num2 using 'expr'
+mod=$(expr $num1 % $num2)  // Calculate the modulus (remainder) of num1 divided by num2 using 'expr'
+
+echo "Sum: $sum"           // Display the sum
+echo "Sub: $sub"           // Display the subtraction result
+echo "Mul: $mul"           // Display the multiplication result
+echo "Div: $div"           // Display the division result
+echo "Modulus: $mod"       // Display the modulus result
+
+
+
+output:
+
+Enter num1: 
+10
+Enter num2: 
+5
+Sum: 15
+Sub: 5
+Mul: 50
+Div: 2
+Modulus: 0
