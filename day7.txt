@@ -1,0 +1,340 @@
+//Q8 write a code for small astrology on your life path number for that get date of birth from user then calculate life path number (use switch case)
+    calculate for life path number:
+	    a=date%10
+		b=date/10
+		c=a+b 
+		
+		if life path number
+		1:lucky
+		2:carefully do your work
+		2: stronger
+		4:happy
+		5:can get help
+		6:doubt
+		7:sad
+	    8:like
+		9:courage
+		
+		
+		answer:
+echo "Enter the birth date:  "
+read date
+a=$(($date%10))
+b=$(($date/10))
+c=$(($a+$b))
+if [ $c -gt 9 ]; then
+ d=$(($c%10))
+ e=$(($c/10))
+ f=$(($d+$e))
+ 
+ case $f in
+1) echo "Lucky";;
+2) echo "Carefully do your work";;
+3) echo "stronger";;
+4) echo "happy";;
+5) echo "can you help me";;
+6) echo "doubt";;
+7) echo "sad";;
+8) echo "like";;
+9) echo "courage";;
+*) echo "error";;
+
+esac
+
+else
+case $c in
+1) echo "Lucky";;
+2) echo "Carefully do your work";;
+3) echo "stronger";;
+4) echo "happy";;
+5) echo "can you help me";;
+6) echo "doubt";;
+7) echo "sad";;
+8) echo "like";;
+9) echo "courage";;
+*) echo "error";;
+
+esac
+
+fi
+
+
+
+
+output:
+
+Enter the birth date:  
+27
+Carefully do your work
+
+
+output:
+
+Enter the birth date:  
+58
+can you help me
+
+
+read varname     // Reads user input and stores it in 'varname'
+$(())            // Performs arithmetic operations (e.g., $(($x + $y)))
+case ... esac    // Executes a block of code based on variable value
+%                // Modulus operator (remainder after division)
+
+
+
+
+		
+//Q8)
+give list of numbers and give summation and multiplication of them
+		
+		
+		FOR LOOP:
+		for variable in list
+		do
+		commands
+		done
+		
+		
+		while loop
+		while[ condition ]
+		do 
+		commands
+		done
+		
+		
+		answer:
+		
+sum=0
+mult=1
+for i in 1 2 3 4 5
+do
+echo "number: "
+read number
+
+sum=$(($sum+$number))
+mult=$(($mult*$number))
+done
+echo "SUM: $sum"
+echo "Multiplication: $mult"
+
+
+output:
+
+number: 
+10
+number: 
+20
+number: 
+30
+number: 
+40
+number: 
+50
+SUM: 150
+Multiplication: 1200000
+
+
+
+for i in 1 2 3 4 5  // Loop over the numbers 1 to 5
+read varname        // Read user input and store it in 'varname'
+$(())               // Perform arithmetic operations (e.g., sum and multiplication)
+
+
+
+
+
+
+//Q9) print the  integer from 1 to 10 using while loop
+
+
+num=1
+while [ num -le 10 ]
+do
+echo "$num"
+num=$(($num+1))
+done
+
+output:
+
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+while [ condition ]   // Executes a loop as long as the condition is true
+$(())                 // Perform arithmetic operations (e.g., incrementing 'num')
+
+
+
+
+
+
+
+//Q10 nested for loop
+
+for((var=0; var<=input; var++)
+do
+for((var=0; var<=input; var++)
+
+do
+  commands
+  done
+  done
+  
+  
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+
+answer:
+ 
+
+for ((i=1; i<=5; i++))
+do
+    for ((j=i; j>=1; j--))
+    do
+        echo -n "* "
+    done
+    echo
+done
+
+
+
+ for ((i=1; i<=5; i++))   // Outer loop, runs 5 times
+for ((j=i; j>=1; j--))   // Inner loop, prints stars for each row based on outer loop's 'i'
+echo -n                 // Prints without newline
+
+
+
+
+ 
+		
+* * * * * * * 
+* * * * * * 
+* * * * * 
+* * * * 
+* * * 
+* * 
+* 
+
+answer:
+for (( i=1; i<=7; i++ ))
+do
+    for (( j=7; j>=i; j-- ))
+    do
+        echo -n "* "
+    done
+    echo 
+done
+
+
+
+for (( i=1; i<=7; i++ ))   // Outer loop, runs 7 times
+for (( j=7; j>=i; j-- ))   // Inner loop, prints stars decreasingly based on outer loop's 'i'
+echo -n                   // Prints without a newline
+
+
+
+
+
+
+
+1
+2 2
+3 3 3
+4 4 4 4
+5 5 5 5 5
+6 6 6 6 6 6
+
+answer:
+for ((i=1; i<=6; i++))
+do
+    for ((j=i; j>=1; j--))
+    do
+        echo -n "$i "   
+    done
+    echo
+done
+
+
+for ((i=1; i<=6; i++))   // Outer loop, runs 6 times
+for ((j=i; j>=1; j--))   // Inner loop, prints 'i' repeatedly, decreasing as 'i' increases
+echo -n                 // Prints without a newline
+
+
+
+
+
+
+
+
+1
+1 2
+1 2 3
+1 2 3 4 
+1 2 3 4 5
+1 2 3 4 5 6
+
+answer:
+
+for ((i=1; i<=6; i++))
+do
+    for ((j=1; j<=i; j++)) 
+    do
+        echo -n "$j "    
+    done
+    echo
+done
+
+
+
+for ((i=1; i<=6; i++))   // Outer loop, runs 6 times, controlling the number of rows
+for ((j=1; j<=i; j++))   // Inner loop, prints numbers from 1 to 'i'
+echo -n                 // Prints without a newline
+
+
+
+
+
+
+
+
+
+
+	    *     
+	   * * 
+	  * * * 
+	 * * * * 
+	* * * * * 
+
+
+
+answer:
+
+for ((i=1; i<=5; i++))
+do
+    for ((j=4; j>=i; j--))
+    do
+        echo -n " "
+    done
+    for ((k=1; k<=i; k++))
+    do
+        echo -n " * " 
+    done
+    echo
+done
+
+   
+
+for ((i=1; i<=5; i++))   // Outer loop, runs 5 times, controlling the number of rows
+for ((j=4; j>=i; j--))   // Prints spaces before the asterisks for right alignment
+for ((k=1; k<=i; k++))   // Prints the asterisks, increasing with each row
+echo -n                 // Prints without a newline
