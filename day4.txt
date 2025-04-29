@@ -1,0 +1,65 @@
+login as: 2021ict92
+2021ict92@172.16.140.150's password:
+Last login: Fri Mar 21 15:26:18 2025 from 172.16.140.26
+[2021ict103@fedora ~]$ cal         //calender
+     March 2025
+Su Mo Tu We Th Fr Sa
+                   1
+ 2  3  4  5  6  7  8
+ 9 10 11 12 13 14 15
+16 17 18 19 20 21 22
+23 24 25 26 27 28 29
+30 31
+
+
+[2021ict103@fedora ~]$ pwd        //Present work directory (path)
+/home/2021ict87
+
+
+[2021ict103@fedora ~]$ ls         //current available files
+kesha.tsv
+
+
+[2021ict103@fedora ~]$ ls -a        //all of the files
+
+.  ..  .abc.tsv.swp  .bash_history  .bash_logout  .bash_profile  .bashrc  .mozilla  kesha.tsv
+
+
+[2021ict103@fedora ~]$ ls -ltr     // all files with date and time
+total 4
+-rw-r--r--. 1 2021ict921 2021ict92 67 Mar 21 15:29 kesha.tsv
+
+
+[2021ict103@fedora ~]$ date +%d      //today date
+24
+
+
+[2021ict103@fedora ~]$ date +%y   // year
+25
+
+
+[2021ict103@fedora ~]$ date +%a  // current day 
+Mon
+
+
+[2021ict103@fedora ~]$ date +%A   // current day(full)
+Monday
+
+
+[22021ict103@fedora ~]$ date +%b    //current month
+Mar
+
+
+[2021ict103@fedora ~]$ date +%B    // current month(full)
+March
+
+
+[2021ict103@fedora ~]$ date +%m   // current month in number(march)
+03
+
+
+[2021ict103@fedora ~]$ date +%H     //current hour in 24 hours format
+11
+
+
+
